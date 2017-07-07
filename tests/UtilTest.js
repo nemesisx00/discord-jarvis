@@ -13,3 +13,8 @@ test('Testing Util.isNumber', t => {
 	t.notOk(Util.isNumber(null), 'Null is not a number')
 	t.end()
 })
+
+test('Testing Util.loadResourceJson', t => {
+	t.ok(Util.loadResourceJson('help'), 'Loaded properly')
+	t.end()
+})

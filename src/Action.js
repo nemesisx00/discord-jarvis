@@ -7,10 +7,11 @@ class Action
 	/**
 	 * Parent class for any action Jarvis can perform.
 	 */
-	constructor(message)
+	constructor(message, config)
 	{
 		this.name = this.constructor.name
-		this.message = message
+		this.config = config
+		this.message = message ? message.trim() : null
 	}
 	
 	/**

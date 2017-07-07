@@ -1,8 +1,10 @@
 'use strict'
 
 let Emojify = load('Actions/Emojify')
+let Help = load('Actions/Help')
+let Snark = load('Actions/Snark')
 
-let commandRegex = /(.*?)\s([a-z]+?)\s(.*)/i
+let commandRegex = /(.*?)\s([a-z]+)(?:\s(.*))?/i
 
 class CommandParser
 {
@@ -26,13 +28,18 @@ class CommandParser
 		{
 			switch(obj.command.toLowerCase())
 			{
+				case 'help':
+					action = new Help(obj.message, this.config)
+					break
 				case 'emojify':
 					action = new Emojify(obj.message)
-					output = action.run()
 					break
 				default:
+					action = new Snark()
 					break
 			}
+			
+			output = action.run()
 		}
 		
 		return output

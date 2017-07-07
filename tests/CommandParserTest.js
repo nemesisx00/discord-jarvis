@@ -12,7 +12,7 @@ test('Testing CommandParser.handle', t => {
 	let instance = new CommandParser(config)
 	
 	let msg = { content: '/jarvis emojify Hey everybody' }
-	let expected = ' :regional_indicator_h:  :regional_indicator_e:  :regional_indicator_y:     :regional_indicator_e:  :regional_indicator_v:  :regional_indicator_e:  :regional_indicator_r:  :regional_indicator_y:  :regional_indicator_b:  :regional_indicator_o:  :regional_indicator_d:  :regional_indicator_y: '
+	let expected = ':regional_indicator_h::regional_indicator_e::regional_indicator_y:   :regional_indicator_e::regional_indicator_v::regional_indicator_e::regional_indicator_r::regional_indicator_y::regional_indicator_b::regional_indicator_o::regional_indicator_d::regional_indicator_y:'
 	let result = instance.handle(msg)
 	
 	t.equal(result, expected, 'Handled emojify')

@@ -1,0 +1,3 @@
+{
+	"emojify": "\nEmojify\n\n\tUsage: %s emojify MESSAGE\n\nReplace all the letters and numbers in MESSAGE with their emoji equivalents. Other characters are left as-is. Adds additional spaces around existing spaces, to improve the presentation."
+}
