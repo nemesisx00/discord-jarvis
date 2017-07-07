@@ -25,7 +25,7 @@ client.on('message', message => {
 			//TODO: Update this to use edit if/when Discord implements permissions allowing a user to edit other users' messages
 			//message.edit(output)
 			
-			message.channel.send(output)
+			message.reply(output)
 			message.delete()
 		}
 	}
