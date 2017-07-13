@@ -13,3 +13,18 @@ test('Testing Util.isNumber', t => {
 	t.notOk(Util.isNumber(null), 'Null is not a number')
 	t.end()
 })
+
+test('Testing Util.loadResourceJson', t => {
+	t.ok(Util.loadResourceJson('help'), 'Loaded properly')
+	t.end()
+})
+
+test('Testing Util.randomInteger', t => {
+	let one = Util.randomInteger()
+	let two = Util.randomInteger()
+	
+	t.ok(Util.isNumber(one), 'Generated random integer (one)')
+	t.ok(Util.isNumber(two), 'Generated random integer (two)')
+	t.notEquals(one, two, 'Subsequent generations are not equal')
+	t.end()
+})

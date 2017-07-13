@@ -16,7 +16,7 @@ test('Testing Emojify', t => {
 
 test('Testing Emojify.format', t => {
 	let input = '  a 1 !\'      '
-	let expected = ' :regional_indicator_a:     :one:     !  \' '
+	let expected = ':regional_indicator_a:   :one:   !\''
 	let outputFormat = 'Input \'%s\' formatted to \'%s\''
 	
 	let instance = new Emojify()
