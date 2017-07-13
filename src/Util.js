@@ -16,6 +16,17 @@ function getRandomIntegerInclusive(min, max)
 
 class Util
 {
+	static getFirstWord(string)
+	{
+		let out = null
+		if(typeof string === 'string')
+		{
+			out = string.split(' ')[0]
+		}
+		
+		return out
+	}
+	
 	static isNumber(value)
 	{
 		return !Number.isNaN(Number.parseInt(value))

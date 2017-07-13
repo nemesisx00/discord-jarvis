@@ -17,7 +17,7 @@ class Help extends Action
 		this.res = Util.loadResourceJson('help')
 	}
 	
-	run()
+	async run()
 	{
 		let output = null
 		

@@ -18,7 +18,7 @@ class CommandParser
 	 * @param Message The message being handled
 	 * @
 	 */
-	handle(message)
+	async handle(message)
 	{
 		let output = null
 		
@@ -30,10 +30,14 @@ class CommandParser
 			switch(obj.command.toLowerCase())
 			{
 				case 'help':
-					action = new Help(obj.message, this.config)
+					action = new Help(obj, this.config)
 					break
 				case 'emojify':
-					action = new Emojify(obj.message)
+					action = new Emojify(obj)
+					break
+				case 'dictionary':
+				case 'thesaurus':
+					action = new Dictionary(obj, this.config)
 					break
 				default:
 					snark.sendFailureMessage()
@@ -41,7 +45,7 @@ class CommandParser
 			}
 			
 			if(action)
-				output = action.run()
+				output = await action.run()
 		}
 		
 		return output

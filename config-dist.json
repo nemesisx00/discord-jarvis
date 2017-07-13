@@ -1,4 +1,10 @@
 {
 	"commandPrefix": "/jarvis",
-	"token": "Put Your Token Here"
+	"token": "Put Your Token Here",
+	"dictionary": {
+		"apiKeys": {
+			"dictionary": { "key": "Put Your Merriam-Webster dictionaryapi.com API Key Here", "ref": "Put The Dictionary Ref Here" },
+			"thesaurus": { "key": "Put Your Merriam-Webster dictionaryapi.com API Key Here", "ref": "Put The Thesaurus Ref Here" }
+		}
+	}
 }

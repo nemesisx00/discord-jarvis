@@ -27,7 +27,7 @@ class Emojify extends Action
 	/**
 	 * Reformat the content in the Message.
 	 */
-	run()
+	async run()
 	{
 		let output = this.format(this.message)
 		return output

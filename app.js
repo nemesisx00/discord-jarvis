@@ -19,15 +19,17 @@ client.on('ready', () => {
 client.on('message', message => {
 	if(message)
 	{
-		let output = cp.handle(message)
-		if(output)
-		{
-			//TODO: Update this to use edit if/when Discord implements permissions allowing a user to edit other users' messages
-			//message.edit(output)
-			
-			message.reply(output)
-			message.delete()
-		}
+		cp.handle(message)
+			.then(ouput => {
+				//TODO: Update this to use edit if/when Discord implements permissions allowing a user to edit other users' messages
+				//message.edit(output)
+				
+				message.reply(output)
+				message.delete()
+			})
+			.catch(error => {
+				//TODO: If there is a meaningful error here, log it...once logging gets implemented
+			})
 	}
 })
 

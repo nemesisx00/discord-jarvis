@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "discord.js": "^11.1.0",
-    "sprintf-js": "^1.1.1"
+    "sprintf-js": "^1.1.1",
+    "xml2js": "^0.4.17"
   },
   "devDependencies": {
     "tap-spec": "^4.1.1",

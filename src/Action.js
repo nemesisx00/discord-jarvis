@@ -7,17 +7,22 @@ class Action
 	/**
 	 * Parent class for any action Jarvis can perform.
 	 */
-	constructor(message, config)
+	constructor(parsedMessage, config)
 	{
 		this.name = this.constructor.name
 		this.config = config
-		this.message = message ? message.trim() : null
+		
+		if(parsedMessage)
+		{
+			this.command = parsedMessage.command
+			this.message = parsedMessage.message ? parsedMessage.message.trim() : null
+		}
 	}
 	
 	/**
 	 * Perform this action.
 	 */
-	run()
+	async run()
 	{
 		throw 'Not yet implemented'
 	}
