@@ -26,7 +26,7 @@ class Help extends Action
 			output = sprintf(defaultHelp, this.config.commandPrefix)
 			for(let key of Object.keys(this.res))
 			{
-				output += '	' + key + '\n'
+				output += ` ${key}\n`
 			}
 		}
 		else

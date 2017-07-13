@@ -2,7 +2,7 @@
 
 let Emojify = load('Actions/Emojify')
 let Help = load('Actions/Help')
-let Snark = load('Actions/Snark')
+let Snark = load('Snark')
 
 let commandRegex = /(.*?)\s([a-z]+)(?:\s(.*))?/i
 
@@ -22,6 +22,7 @@ class CommandParser
 	{
 		let output = null
 		
+		let snark = new Snark(message.channel)
 		let action = null
 		let obj = this.parseCommand(message)
 		if(obj)
@@ -35,11 +36,12 @@ class CommandParser
 					action = new Emojify(obj.message)
 					break
 				default:
-					action = new Snark()
+					snark.sendFailureMessage()
 					break
 			}
 			
-			output = action.run()
+			if(action)
+				output = action.run()
 		}
 		
 		return output
